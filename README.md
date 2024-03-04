@@ -1,2 +1,2 @@
-# Atividade---Chamadas-de-sistemas
+# Atividade-Chamadas-de-sistemas
 Atividade da disciplina de sistemas operacionais.
