@@ -12,6 +12,8 @@ A chamada de sistema uptime é utilizada para obter informações sobre o tempo 
 
 Internamente, a chamada de sistema uptime obtém essas informações consultando o arquivo /proc/uptime. Este arquivo contém dois números separados por um espaço em branco: o primeiro número representa o tempo em segundos desde que o sistema foi inicializado, e o segundo número representa o tempo que o sistema passou em estado ocioso.
 
+Este comando faz a utilização de buffer no código, para poder armazenar o texto que deve ser mostrado nas horas, já que elas vem do arquivo proc/.
+
 ## ls
 
 O comando ls abre um programa que usa chamadas de sistema do Linux para interagir com o sistema de arquivos e listar o conteúdo de um diretório específico.
@@ -23,6 +25,8 @@ Para listar os conteúdos de um diretório, o programa ls pode usar várias cham
 O comando cp no Linux é utilizado para copiar arquivos e diretórios de um local para outro. Ele oferece uma série de opções para controlar o comportamento da cópia, como preservar atributos de arquivos, recursivamente copiar diretórios, forçar a sobrescrita de arquivos existentes, entre outros.
 
 O código feito neste trabalho, foca somente em sua função principal, a de copiar um arquivo ou diretorio, utilizando chamadas de sistema do Linux (open(), read(), write(), close()) para manipulação de arquivos. 
+
+Este comando também faz a utilização de buffer no código, para poder armazenar os caracteres do arquivo que deverá ser copiado.
 
 ## rm 
 
@@ -39,3 +43,5 @@ O código feito neste trabalho, utiliza a chamada de sistema rename(), ela é us
 O comando cat é usado principalmente para exibir o conteúdo de arquivos de texto no kernel do sistema Unix e Linux. O cat é uma ferramenta simples, mas poderosa, que possui várias funcionalidades úteis. 
 
 O comando cat no Unix e no Linux usa principalmente a chamada de sistema open(), read() e write() para manipular arquivos e imprimir seu conteúdo no kernel. No código feito para este trabalho, a chamada de sistema write é substituida pelo printf().
+
+Este comando também faz a utilização de buffer no código, para poder armazenar o texto do arquivo que deve ser mostrado.
