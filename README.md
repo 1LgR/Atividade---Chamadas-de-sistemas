@@ -29,3 +29,8 @@ O código feito neste trabalho, foca somente em sua função principal, a de cop
 O comando rm no Linux é usado para remover (ou excluir) arquivos e diretórios. Ele tem várias opções para personalizar o comportamento da remoção, como a capacidade de remover recursivamente diretórios e forçar a remoção sem solicitar confirmação.
 
 O código feito neste trabalho, foca somente em sua função principal, a de remover arquivos, utilzando a chamada de sistema unlink() que é a responsável pela funcionalidade de remoção de arquivos no comando rm, com verificações de permissões, manipulação de arquivos e atualizações do sistema de arquivos realizadas conforme necessário para garantir que a remoção ocorra corretamente.
+
+## mv
+O comando mv é uma ferramenta que serve para mover e renomear arquivos e diretórios no sistema de arquivos do Linux, proporcionando flexibilidade e facilidade de uso para reorganizar os dados no sistema.
+
+O código feito neste trabalho, utiliza a chamada de sistema rename(), ela é usada para renomear um arquivo, movê-lo para um novo diretório ou ambos. 
