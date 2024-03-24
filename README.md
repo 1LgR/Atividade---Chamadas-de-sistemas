@@ -34,3 +34,8 @@ O código feito neste trabalho, foca somente em sua função principal, a de rem
 O comando mv é uma ferramenta que serve para mover e renomear arquivos e diretórios no sistema de arquivos do Linux, proporcionando flexibilidade e facilidade de uso para reorganizar os dados no sistema.
 
 O código feito neste trabalho, utiliza a chamada de sistema rename(), ela é usada para renomear um arquivo, movê-lo para um novo diretório ou ambos. 
+
+## cat
+O comando cat é usado principalmente para exibir o conteúdo de arquivos de texto no kernel do sistema Unix e Linux. O cat é uma ferramenta simples, mas poderosa, que possui várias funcionalidades úteis. 
+
+O comando cat no Unix e no Linux usa principalmente a chamada de sistema open(), read() e write() para manipular arquivos e imprimir seu conteúdo no kernel. No código feito para este trabalho, a chamada de sistema write é substituida pelo printf().
