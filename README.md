@@ -23,3 +23,9 @@ Para listar os conteúdos de um diretório, o programa ls pode usar várias cham
 O comando cp no Linux é utilizado para copiar arquivos e diretórios de um local para outro. Ele oferece uma série de opções para controlar o comportamento da cópia, como preservar atributos de arquivos, recursivamente copiar diretórios, forçar a sobrescrita de arquivos existentes, entre outros.
 
 O código feito neste trabalho, foca somente em sua função principal, a de copiar um arquivo ou diretorio, utilizando chamadas de sistema do Linux (open(), read(), write(), close()) para manipulação de arquivos. 
+
+## rm 
+
+O comando rm no Linux é usado para remover (ou excluir) arquivos e diretórios. Ele tem várias opções para personalizar o comportamento da remoção, como a capacidade de remover recursivamente diretórios e forçar a remoção sem solicitar confirmação.
+
+O código feito neste trabalho, foca somente em sua função principal, a de remover arquivos, utilzando a chamada de sistema unlink() que é a responsável pela funcionalidade de remoção de arquivos no comando rm, com verificações de permissões, manipulação de arquivos e atualizações do sistema de arquivos realizadas conforme necessário para garantir que a remoção ocorra corretamente.
