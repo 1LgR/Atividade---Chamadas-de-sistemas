@@ -6,6 +6,7 @@
 #include <sys/sysinfo.h>
 #include <time.h>
 
+//determinar o tamanho do buffer utilizado para armazenar os dados lidos do arquivo /proc/uptime
 #define BUF_SIZE 128
 
 int main() {
