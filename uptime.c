@@ -3,10 +3,12 @@
 #include <stdlib.h>
 #include <unistd.h>
 
+#define BUF_SIZE 128
+
 int main() {
     int fd;  // Descritor de arquivo
-    char ch;  // Variável para armazenar o caractere lido
-    int uptime_segundos;  // Variável para armazenar o tempo de atividade em segundos
+    char buf[BUF_SIZE];  // Buffer para armazenar os dados lidos
+    double uptime_seconds;  // Variável para armazenar o tempo de atividade em segundos
 
     // Abre o arquivo /proc/uptime para leitura
     fd = open("/proc/uptime", O_RDONLY);
@@ -16,7 +18,8 @@ int main() {
     }
 
     // Lê o conteúdo do arquivo /proc/uptime para obter o tempo de atividade em segundos
-    if (read(fd, &ch, 1) == -1) {
+    ssize_t bytes_read = read(fd, buf, BUF_SIZE);
+    if (bytes_read == -1) {
         perror("Erro ao ler o arquivo /proc/uptime");
         close(fd);
         exit(EXIT_FAILURE);
@@ -25,17 +28,15 @@ int main() {
     // Fecha o arquivo após a leitura do tempo de atividade
     close(fd);
 
-    // Converte o caractere lido para o formato de tempo de atividade em segundos
-    uptime_segundos = atoi(&ch);
+    // Converte os valores lidos para o tempo de atividade em segundos
+    uptime_seconds = atof(buf);
 
     // Calcula o tempo de atividade em horas, minutos e segundos
-    int horas = uptime_segundos / 3600;
-    int minutos = (uptime_segundos % 3600) / 60;
-    int segundos = uptime_segundos % 60;
+    int hours = uptime_seconds / 3600;
+    int minutes = ((int)uptime_seconds % 3600) / 60;
 
     // Imprime o tempo de atividade no formato padrão do comando uptime
-    printf("%02d:%02d:%02d up  %d:%02d,  0 users,  load average: 0.00, 0.00, 0.00\n",
-           horas, minutos, segundos, horas, minutos);
+    printf("%02d:%02d:00 up %d minutes\n", hours, minutes, hours * 60 + minutes);
 
     return 0;
 }
