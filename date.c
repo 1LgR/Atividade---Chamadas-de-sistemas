@@ -4,10 +4,16 @@
 int main() {
     struct timespec current_time;
 
-    // Obter o tempo atual do relógio em tempo real
+    /* Obter o tempo atual do relógio em tempo real
+    Clock_realtime: obtem o tempo atual do relogio e envia para a variavel current_time.
+    */
     clock_gettime(CLOCK_REALTIME, &current_time);
 
-    // Converter o tempo para uma estrutura de tempo
+    /*Converte os valores para uma estrutura de tempo
+    cria uma variavel 'atual' que adquiri os segundos desde o dia 1 de janeiro de 1970.
+    declara um ponteiro em uma estrutura tm, que é usada para armazenar o tempo de uma forma legivel.
+    usa a função localtime para armazenar na variavel tm_info o valor de now de uma forma legivel.
+    */
     time_t atual = current_time.tv_sec;
     struct tm *tm_info;
     tm_info = localtime(&atual);
