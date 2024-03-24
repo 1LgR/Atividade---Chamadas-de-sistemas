@@ -18,21 +18,21 @@ int main() {
     struct tm *tm_info;
     tm_info = localtime(&atual);
 
-    // Mapeamento dos nomes dos meses
+    //Mapeamento dos nomes dos meses
     const char *meses[] = {"Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"};
 
-    // Mapeamento dos nomes dos dias
+    //Mapeamento dos nomes dos dias
     const char *dias[] = {"Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"};
 
-    // Formatar e exibir a data e hora atual
+    //Formatar e exibir a data e hora atual
     printf("%s %s %02d %02d:%02d:%02d -03 %d\n", 
-           dias[tm_info->tm_wday],   // Mês
-           meses[tm_info->tm_mon],  // Dia da semana
-           tm_info->tm_mday,               // Dia do mês
-           tm_info->tm_hour,               // Hora
-           tm_info->tm_min,                // Minuto
-           tm_info->tm_sec,                // Segundo
-           tm_info->tm_year + 1900);       // Ano
+           dias[tm_info->tm_wday],         //Mês
+           meses[tm_info->tm_mon],         //Dia da semana
+           tm_info->tm_mday,               //Dia do mês
+           tm_info->tm_hour,               //Hora
+           tm_info->tm_min,                //Minuto
+           tm_info->tm_sec,                //Segundo
+           tm_info->tm_year + 1900);       //Ano
 
     return 0;
 }

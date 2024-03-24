@@ -22,7 +22,7 @@ int main() {
     //Estrutura para adquirir informações do sistema
     struct sysinfo info;
 
-    // Obtém as informações do sistema
+    //Obtém as informações do sistema
     if (sysinfo(&info) != 0) {
         perror("Erro ao obter informações do sistema");
         exit(EXIT_FAILURE);
@@ -36,14 +36,14 @@ int main() {
     char buf[BUF_SIZE];
     double uptime_segundos;
 
-    // Abre o arquivo /proc/uptime para leitura
+    //Abre o arquivo /proc/uptime para leitura
     fd = open("/proc/uptime", O_RDONLY);
     if (fd == -1) {
         perror("Erro ao abrir o arquivo /proc/uptime");
         exit(EXIT_FAILURE);
     }
 
-    // Lê os valores de tempo total de atividade e tempo de ociosidade do sistema
+    //Lê os valores de tempo total de atividade e tempo de ociosidade do sistema
     ssize_t ler_bytes = read(fd, buf, BUF_SIZE);
     if (ler_bytes == -1) {
         perror("Erro ao ler os valores de tempo de atividade e tempo ocioso");
@@ -51,10 +51,10 @@ int main() {
         exit(EXIT_FAILURE);
     }
 
-    // Fecha o arquivo após a leitura dos valores
+    //Fecha o arquivo após a leitura dos valores
     close(fd);
 
-    // Extrai os valores de tempo de atividade do sistema
+    //Extrai os valores de tempo de atividade do sistema
     char *token = strtok(buf, " ");
     if (token == NULL) {
         perror("Erro ao extrair os valores de tempo de atividade e tempo ocioso");
@@ -62,11 +62,11 @@ int main() {
     }
     uptime_segundos = atof(token);
 
-    // Calcula o tempo de atividade em horas, minutos e segundos
+    //Calcula o tempo de atividade em horas, minutos e segundos
     int horas = (int)uptime_segundos / 3600;
     int minutos = ((int)uptime_segundos % 3600) / 60;
 
-    // Imprime o tempo de atividade no formato padrão do comando uptime
+    //Imprime o tempo de atividade no formato padrão do comando uptime
     printf(" %02d:%02d:%02d up %2d:%02d,  0 users,  load average: %.2f, %.2f, %.2f\n", 
            tm_info->tm_hour, tm_info->tm_min, tm_info->tm_sec, horas, minutos, 
            info.loads[0] / (float)(1 << SI_LOAD_SHIFT),
