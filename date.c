@@ -19,10 +19,10 @@ int main() {
     tm_info = localtime(&atual);
 
     //Mapeamento dos nomes dos meses
-    const char *meses[] = {"Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"};
+    const char *meses[] = {"Jan", "Fev", "Mar", "Abr", "Maio", "Jun", "Jul", "Ago", "Set", "Out", "Nov", "Dez"};
 
     //Mapeamento dos nomes dos dias
-    const char *dias[] = {"Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"};
+    const char *dias[] = {"Dom", "Seg", "Ter", "Qua", "Qui", "Sex", "Sab"};
 
     //Formatar e exibir a data e hora atual
     printf("%s %s %02d %02d:%02d:%02d -03 %d\n", 
