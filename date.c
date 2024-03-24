@@ -4,7 +4,7 @@
 int main() {
     struct timespec current_time;
 
-    /* Obter o tempo atual do relógio em tempo real
+    /* Obtem o tempo atual do relógio em tempo real
     Clock_realtime: obtem o tempo atual do relogio e envia para a variavel current_time.
     */
     clock_gettime(CLOCK_REALTIME, &current_time);
