@@ -2,13 +2,13 @@
 Atividade da disciplina de sistemas operacionais.
 
 ## date
-O comando date depende de chamadas de sistema para obter a hora atual. Normalmente, ele faz uso da função gettimeofday() ou clock_gettime(), que são chamadas de sistema responsáveis por obter o tempo atual do sistema. Essas chamadas de sistema acessam um contador de tempo de hardware mantido pelo kernel do Linux.
+O comando date depende de chamadas de sistema para obter a hora atual. Normalmente, ele faz uso da função gettimeofday() ou clock_gettime(), que são chamadas de sistema responsáveis por obter o tempo atual do sistema. Essas chamadas de sistema acessam um contador de tempo de hardware mantido pelo shell do Linux.
 
 A função que eu utilizo é a clock_gettime(), ela permite que sistema acesse um relógio específico, como o relógio de tempo real (CLOCK_REALTIME), que fornece o tempo do sistema em relação ao Unix Epoch (00:00:00 UTC em 1 de janeiro de 1970), com precisão em nanossegundos. 
 
 ## uptime
 
-A chamada de sistema uptime é utilizada para obter informações sobre o tempo de atividade do sistema operacional. Quando você executa o comando uptime no kernel do linux, ele mostra o tempo que o sistema está funcionando, bem como outras informações relevantes, como o número de usuários logados e a carga média do sistema nos últimos 1, 5 e 15 minutos.
+A chamada de sistema uptime é utilizada para obter informações sobre o tempo de atividade do sistema operacional. Quando você executa o comando uptime no shell do linux, ele mostra o tempo que o sistema está funcionando, bem como outras informações relevantes, como o número de usuários logados e a carga média do sistema nos últimos 1, 5 e 15 minutos.
 
 Internamente, a chamada de sistema uptime obtém essas informações consultando o arquivo /proc/uptime. Este arquivo contém dois números separados por um espaço em branco: o primeiro número representa o tempo em segundos desde que o sistema foi inicializado, e o segundo número representa o tempo que o sistema passou em estado ocioso.
 
@@ -40,8 +40,16 @@ O comando mv é uma ferramenta que serve para mover e renomear arquivos e diret�
 O código feito neste trabalho, utiliza a chamada de sistema rename(), ela é usada para renomear um arquivo, movê-lo para um novo diretório ou ambos. 
 
 ## cat
-O comando cat é usado principalmente para exibir o conteúdo de arquivos de texto no kernel do sistema Unix e Linux. O cat é uma ferramenta simples, mas poderosa, que possui várias funcionalidades úteis. 
+O comando cat é usado principalmente para exibir o conteúdo de arquivos de texto no shell do sistema Unix e Linux. O cat é uma ferramenta simples, mas poderosa, que possui várias funcionalidades úteis. 
 
-O comando cat no Unix e no Linux usa principalmente a chamada de sistema open(), read() e write() para manipular arquivos e imprimir seu conteúdo no kernel. No código feito para este trabalho, a chamada de sistema write é substituida pelo printf().
+O comando cat no Unix e no Linux usa principalmente a chamada de sistema open(), read() e write() para manipular arquivos e imprimir seu conteúdo no shell. No código feito para este trabalho, a chamada de sistema write é substituida pelo printf().
 
 Este comando também faz a utilização de buffer no código, para poder armazenar o texto do arquivo que deve ser mostrado.
+
+## mkdir
+
+O comando mkdir no sistema operacional Linux é utilizado para criar diretórios (pastas) no sistema de arquivos. Ele recebe como argumento o nome do diretório que se deseja criar.
+
+A chamada de sistema usada pelo comando mkdir é a mkdir(), que é a mesma utilizada pelo código neste trabalho, a função dela é de criar um novo diretório, além disso, o valor retornado por ela é 0 em caso de sucesso e -1 em caso de falha, e o código de erro é definido na variável errno do linux.
+
+No uso da chamada de sistema no código, se é passado como parametro o número 0777, que é uma representação octal de permissões de acesso em sistemas Unix. É uma forma de especificar permissões de leitura, escrita e execução para o arquivo ou diretório que está sendo criado.
