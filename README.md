@@ -20,7 +20,7 @@ O comando ls abre um programa que usa chamadas de sistema do Linux para interagi
 
 Para listar os conteúdos de um diretório, o programa ls pode usar várias chamadas de sistema do Linux, como opendir(), readdir() e closedir() para abrir, ler e fechar diretórios, respectivamente. Ele também pode usar chamadas de sistema de obtenção de atributos de arquivos, como stat() ou lstat(), para obter informações sobre os arquivos no diretório.
 
-## CP
+## cp
 
 O comando cp no Linux é utilizado para copiar arquivos e diretórios de um local para outro. Ele oferece uma série de opções para controlar o comportamento da cópia, como preservar atributos de arquivos, recursivamente copiar diretórios, forçar a sobrescrita de arquivos existentes, entre outros.
 
@@ -59,3 +59,4 @@ No uso da chamada de sistema no código, se é passado como parametro o número 
 O comando rmdir é um comando em sistemas Unix e Linux que é usada para remover um diretório vazio do sistema de arquivos. O diretório especificado deve estar vazio para que a remoção seja bem-sucedida. Se o diretório contiver arquivos ou outros diretórios, o comando rmdir falhará.
 
 O comando usa a chamada de sistema unlink() para remover o diretório especificado. A chamada de sistema unlink() é uma operação de baixo nível que remove um link para um arquivo ou diretório no sistema de arquivos. Se o link removido for o último link para o arquivo ou diretório, o espaço no sistema de arquivos associado a esse arquivo ou diretório é liberado.
+
