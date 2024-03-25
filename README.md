@@ -20,7 +20,7 @@ O comando ls abre um programa que usa chamadas de sistema do Linux para interagi
 
 Para listar os conteúdos de um diretório, o programa ls pode usar várias chamadas de sistema do Linux, como opendir(), readdir() e closedir() para abrir, ler e fechar diretórios, respectivamente. Ele também pode usar chamadas de sistema de obtenção de atributos de arquivos, como stat() ou lstat(), para obter informações sobre os arquivos no diretório.
 
-## CP
+## cp
 
 O comando cp no Linux é utilizado para copiar arquivos e diretórios de um local para outro. Ele oferece uma série de opções para controlar o comportamento da cópia, como preservar atributos de arquivos, recursivamente copiar diretórios, forçar a sobrescrita de arquivos existentes, entre outros.
 
