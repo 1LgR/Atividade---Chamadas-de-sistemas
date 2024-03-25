@@ -53,3 +53,9 @@ O comando mkdir no sistema operacional Linux é utilizado para criar diretórios
 A chamada de sistema usada pelo comando mkdir é a mkdir(), que é a mesma utilizada pelo código neste trabalho, a função dela é de criar um novo diretório, além disso, o valor retornado por ela é 0 em caso de sucesso e -1 em caso de falha, e o código de erro é definido na variável errno do linux.
 
 No uso da chamada de sistema no código, se é passado como parametro o número 0777, que é uma representação octal de permissões de acesso em sistemas Unix. É uma forma de especificar permissões de leitura, escrita e execução para o arquivo ou diretório que está sendo criado.
+
+## rmdir
+
+O comando rmdir é um comando em sistemas Unix e Linux que é usada para remover um diretório vazio do sistema de arquivos. O diretório especificado deve estar vazio para que a remoção seja bem-sucedida. Se o diretório contiver arquivos ou outros diretórios, o comando rmdir falhará.
+
+O comando usa a chamada de sistema unlink() para remover o diretório especificado. A chamada de sistema unlink() é uma operação de baixo nível que remove um link para um arquivo ou diretório no sistema de arquivos. Se o link removido for o último link para o arquivo ou diretório, o espaço no sistema de arquivos associado a esse arquivo ou diretório é liberado.
