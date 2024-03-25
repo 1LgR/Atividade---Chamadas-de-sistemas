@@ -32,7 +32,7 @@ Este comando também faz a utilização de buffer no código, para poder armazen
 
 O comando rm no Linux é usado para remover (ou excluir) arquivos e diretórios. Ele tem várias opções para personalizar o comportamento da remoção, como a capacidade de remover recursivamente diretórios e forçar a remoção sem solicitar confirmação.
 
-O código feito neste trabalho, foca somente em sua função principal, a de remover arquivos, utilzando a chamada de sistema unlink() que é a responsável pela funcionalidade de remoção de arquivos no comando rm, com verificações de permissões, manipulação de arquivos e atualizações do sistema de arquivos realizadas conforme necessário para garantir que a remoção ocorra corretamente.
+O código feito neste trabalho, foca somente em sua função principal, a de remover arquivos, utilzando a chamada de sistema unlink() que é a responsável pela funcionalidade de remoção de arquivos no comando rm, com verificações de permissões, manipulação de arquivos e atualizações do sistema de arquivos realizadas conforme necessário para garantir que a remoção ocorra corretamente. A chamada de sistema unlink() é uma operação de baixo nível que remove um link para um arquivo ou diretório no sistema de arquivos. Se o link removido for o último link para o arquivo ou diretório, o espaço no sistema de arquivos associado a esse arquivo ou diretório é liberado.
 
 ## mv
 O comando mv é uma ferramenta que serve para mover e renomear arquivos e diretórios no sistema de arquivos do Linux, proporcionando flexibilidade e facilidade de uso para reorganizar os dados no sistema.
@@ -58,5 +58,5 @@ No uso da chamada de sistema no código, se é passado como parametro o número 
 
 O comando rmdir é um comando em sistemas Unix e Linux que é usada para remover um diretório vazio do sistema de arquivos. O diretório especificado deve estar vazio para que a remoção seja bem-sucedida. Se o diretório contiver arquivos ou outros diretórios, o comando rmdir falhará.
 
-O comando usa a chamada de sistema unlink() para remover o diretório especificado. A chamada de sistema unlink() é uma operação de baixo nível que remove um link para um arquivo ou diretório no sistema de arquivos. Se o link removido for o último link para o arquivo ou diretório, o espaço no sistema de arquivos associado a esse arquivo ou diretório é liberado.
+O comando usa a chamada de sistema rmdir() para remover o diretório especificado. A chamada de sistema rmdir() é responsável por verificar as permissões de acesso, verificar se o diretório está vazio, remover o diretório e retornar um valor para indicar o resultado da operação. Essa chamada de sistema desempenha um papel crucial na manipulação de diretórios vazios no sistema de arquivos do sistema operacional.
 

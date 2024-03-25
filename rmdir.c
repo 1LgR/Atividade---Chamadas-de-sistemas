@@ -11,7 +11,7 @@ int main() {
     scanf("%99s", nome_diretorio);  //Lê o nome do diretório, limitando a 99 caracteres
 
     //Chama a função mkdir() para criar o diretório com o nome fornecido pelo usuário
-    int resultado = unlink(nome_diretorio);
+    int resultado = rmdir(nome_diretorio);
     if (resultado == -1) {
         perror("Erro ao remover arquivo");
         exit(EXIT_FAILURE);
