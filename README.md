@@ -62,7 +62,7 @@ O comando usa a chamada de sistema rmdir() para remover o diretório especificad
 
 ## chmod
 
-O comando chmod tem a função de alterar a permissão de um arquivo/diretório, ele utilizada do chmod() que é uma chamada de sistema que é usada para alterar as permissões de acesso de um arquivo ou diretório no sistema operacional Linux. A palavra "chmod" é uma abreviação de "change mode".
+O comando chmod tem a função de alterar a permissão de um arquivo/diretório, ele utiliza do chmod() que é uma chamada de sistema que é usada para alterar as permissões de acesso de um arquivo ou diretório no sistema operacional Linux. A palavra "chmod" é uma abreviação de "change mode".
 
 Quando falamos em change mode, falamos de uma mudança de modo em octal, e que estão classificada em 3 níveis diferentes, que envolvem os usuário:
 
