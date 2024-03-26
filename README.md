@@ -60,3 +60,46 @@ O comando rmdir é um comando em sistemas Unix e Linux que é usada para remover
 
 O comando usa a chamada de sistema rmdir() para remover o diretório especificado. A chamada de sistema rmdir() é responsável por verificar as permissões de acesso, verificar se o diretório está vazio, remover o diretório e retornar um valor para indicar o resultado da operação. Essa chamada de sistema desempenha um papel crucial na manipulação de diretórios vazios no sistema de arquivos do sistema operacional.
 
+## chmod
+
+O comando chmod tem a função de alterar a permissão de um arquivo/diretório, ele utilizada do chmod() que é uma chamada de sistema que é usada para alterar as permissões de acesso de um arquivo ou diretório no sistema operacional Linux. A palavra "chmod" é uma abreviação de "change mode".
+
+Quando falamos em change mode, falamos de uma mudança de modo em octal, e que estão classificada em 3 níveis diferentes, que envolvem os usuário:
+
+#### Usuário proprietário do arquivo ou diretório:
+Na maioria das vezes foi quem o criou, mas pode receber essa atribuição pelo root.
+#
+#### Grupo do proprietário do arquivo ou diretório:
+É o grupo que categoriza os usuários do mesmo grupo de quem criou o arquivo ou diretório, mas pode ser alterado pelo root..
+#
+#### Outros usuários:
+São qualquer outro que não o próprio usuário proprietário ou membro do grupo do proprietário.
+#
+#### Para cada um destes níveis, existem três tipos de permissões:
+
+<li>
+    r – para leitura.
+</li>
+<li>
+    w – para escrita ou gravação.
+</li>
+<li>
+    x – para exceção, no caso de se tratar de um script ou binário executável.
+</li>
+
+#### Método octal
+O método octal é uma representação das permissões no nível binário e esta forma de administração funciona através da soma de valores. Os valores são:
+
+<li>
+    r – 4
+</li>
+<li>
+    w – 2
+</li>
+<li>
+    x – 1
+</li>
+
+São representados em ordem decrescente. A soma de todos representa o nível mais alto de permissão: 7. Isso diz ser possível ler, gravar e executar, ou seja, todas possibilidades. Agora tendo isso em mente note essa tabela de possíveis combinações:
+
+![Combinações Possíveis de permissões no Linux](imgs/permissoes_arquivo_linux.jpg)
