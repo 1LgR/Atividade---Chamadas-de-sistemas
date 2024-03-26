@@ -100,6 +100,8 @@ O método octal é uma representação das permissões no nível binário e esta
     x – 1
 </li>
 
-São representados em ordem decrescente. A soma de todos representa o nível mais alto de permissão: 7. Isso diz ser possível ler, gravar e executar, ou seja, todas possibilidades. Agora tendo isso em mente note essa tabela de possíveis combinações:
+São representados em ordem decrescente. A soma de todos representa o nível mais alto de permissão: 7. Isso diz ser possível ler, gravar e executar, ou seja, todas possibilidades. Esta é uma tabela que contém todas as possíveis combinações:
 
 ![Combinações Possíveis de permissões no Linux](imgs/permissoes_arquivo_linux.jpg)
+
+Utilizando essas combinações no codigo octal que decidimos quais permissões serão dadas ao arquivo ou a pasta.
