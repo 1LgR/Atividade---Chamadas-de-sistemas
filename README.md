@@ -105,3 +105,11 @@ São representados em ordem decrescente. A soma de todos representa o nível mai
 ![Combinações Possíveis de permissões no Linux](imgs/permissoes_arquivo_linux.jpg)
 
 Utilizando essas combinações no codigo octal que decidimos quais permissões serão dadas ao arquivo ou a pasta.
+
+## chown
+
+O comando chown tem a função de mudar o usuário dono do arquivo e/ou o grupo ao qual ele pertence. Ele utilizada o chown() que é uma chamada de sistema que é usada para alterar o proprietário e o grupo de um arquivo ou diretório no sistema operacional Linux. A palavra "chown" é uma abreviação de "change owner".
+
+A chamada de sistema chown() é comumente usada por administradores de sistemas para gerenciar permissões de arquivos e diretórios em um sistema Linux, e para usar, o usuário que executa o programa precisa ter permissões adequadas para alterar o proprietário e/ou o grupo do arquivo ou diretório especificado.
+
+No código feito para o trabalho, além da chamada de sistema chown, será utilizado a função atoi() para converter os argumentos do usuário para números inteiros. E na hora de passar os parametros, deve-se utilizar de UID e GID para dizer qual usuário deverá ter a permissão e de qual grupo ele vai ser, respectivamente.
