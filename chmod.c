@@ -4,12 +4,12 @@
 
 int main(int argc, char *argv[]) {
     if (argc != 3) {
-        fprintf(stderr, "Uso: %s <arquivo/diretorio> <permissões_octal>\n", argv[0]);
+        fprintf(stderr, "Uso: %s <permissões_octal> <arquivo/diretorio> \n", argv[0]);
         return EXIT_FAILURE;
     }
 
-    const char *path = argv[1]; // Caminho do arquivo/diretório
-    mode_t mode = (mode_t) strtol(argv[2], NULL, 8); // Permissões em octal
+    const char *path = argv[2]; // Caminho do arquivo/diretório
+    mode_t mode = (mode_t) strtol(argv[1], NULL, 8); // Permissões em octal
 
     if (chmod(path, mode) == -1) {
         perror("Erro ao alterar permissões");
